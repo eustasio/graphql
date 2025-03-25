@@ -11,4 +11,4 @@ export type Cartoon = {
     author: string;
     ft_diffusion: string;
     personnages: Personnage[];
-  };
+};
