@@ -24,6 +24,7 @@
       /** Décorateur et métadonnés (pour TypeORM) */
       "emitDecoratorMetadata": true,
       "experimentalDecorators": true
+      
     },
     "exclude": ["node_modules"], //Liste les fichiers et dossiers eclus de la compilation
     "include": ["./src/**/*.ts"] // Liste les fichiers à inclure obligatoirement dans la compilation
