@@ -42,6 +42,7 @@ const resolvers = {
     Query: {
       getCartoons: () => cartoons,
       getOneCartoonById,
+      
     },
   };
 
