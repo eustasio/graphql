@@ -2,7 +2,7 @@
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
 import { getOneCartoonById } from "./resolvers/cartoon.resolver";
-import { Cartoon } from "./schemas/cartoon.schema";
+import { Cartoon, CartoonInput } from "./schemas/cartoon.schema";
 import { Personnage, PersonnageInput } from "./schemas/personnage.schema";
 const cartoons = [
     {
@@ -34,7 +34,7 @@ const typeDefs = `#graphql
     type Cartoon ${Cartoon}
     type Personnage ${Personnage}
     input PersonnageInput ${PersonnageInput}
-    
+    input CartoonInput ${CartoonInput}
 
 
     type Query {
