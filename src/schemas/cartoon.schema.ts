@@ -11,7 +11,6 @@ export const Cartoon = `{
     personnages: [Personnage]
 }`;
 export const CartoonInput = `{
-    id: ID
     name: String
     description: String
     nb_of_episodes: Int

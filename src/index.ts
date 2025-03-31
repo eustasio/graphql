@@ -2,6 +2,7 @@
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
 import { getOneCartoonById } from "./resolvers/cartoon.resolver";
+import { createCartoon } from "./resolvers/cartoon.resolver";
 import { Cartoon, CartoonInput } from "./schemas/cartoon.schema";
 import { Personnage, PersonnageInput } from "./schemas/personnage.schema";
 const cartoons = [
@@ -41,13 +42,18 @@ const typeDefs = `#graphql
   getCartoons: [Cartoon],
   getOneCartoonById(id: ID!): Cartoon,
   }
+  type Mutation {
+  createCartoon(catoon: CartoonInput): ID
+  }
 `
 
 const resolvers = {
     Query: {
       getCartoons: () => cartoons,
       getOneCartoonById,
-      
+    },
+    Mutation: {
+      createCartoon,
     },
   };
 
