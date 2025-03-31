@@ -9,10 +9,6 @@ export const getOneCartoonById = (_: unknown, args: GetOneCartoonByIdArgs): Cart
     return cartoons.find((cartoon) => cartoon.id === +args.id) as Cartoon;
   };
 
-
-
-
-
 export const createCartoon = (
   _: unknown, args: {cartoon: Cartoon}
  ): number => {

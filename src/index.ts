@@ -5,6 +5,8 @@ import { getOneCartoonById } from "./resolvers/cartoon.resolver";
 import { createCartoon } from "./resolvers/cartoon.resolver";
 import { Cartoon, CartoonInput } from "./schemas/cartoon.schema";
 import { Personnage, PersonnageInput } from "./schemas/personnage.schema";
+import "reflect-metadata"
+import { dataSource } from "./client";
 const cartoons = [
     {
       id: 1,
@@ -63,6 +65,7 @@ const server = new ApolloServer({
   });
 /** Fonction auto appellée (évite la mise en constante) permettant de lancer le serveur */
 (async () => {
+  await dataSource.initialize();
   const { url } = await startStandaloneServer(server, {
     listen: { port: 4000 },
   });
